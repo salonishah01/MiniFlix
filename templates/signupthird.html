@@ -1,0 +1,25 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<section class="mt-3">
+    <div class="conatiner mt-5">
+        <div class="row">
+            <div class="card card-body col-lg-4 col-md-4 col-12 mx-auto">
+                <img src="https://assets.nflxext.com/ffe/siteui/acquisition/simplicity/Checkmark.png" class="mx-auto" width="50px">
+                <p class="mt-3 text-center">STEP <strong>2</strong> OF <strong>3</strong></p>
+                <h3 class="text-center">Choose your plan.</h3>
+                <P class="mt-4"><i class="fa fa-check fa-lg" aria-hidden="true"></i> No commitments, cancel anytime.</P>
+                <P class="mt-2"><i class="fa fa-check fa-lg" aria-hidden="true"></i> Everything on MiniFlix for one low price.</P>
+                <P class="mt-2"><i class="fa fa-check fa-lg" aria-hidden="true"></i> No ads and no extra fees. Ever.</P>
+                <a href="{% url 'signupfourth' %}" class="btn btn-block btn-danger mt-3">See the Plans</a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+</section>
+
+
+{% endblock %}

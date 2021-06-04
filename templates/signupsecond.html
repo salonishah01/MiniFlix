@@ -1,0 +1,27 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<section class="mt-3">
+    <div class="conatiner mt-5">
+        <div class="row">
+            <div class="card card-body col-lg-5 col-md-5 col-12 mx-auto">
+                <p class="mt-3">STEP <strong>1</strong> OF <strong>3</strong></p>
+                <h3>Create a password to start your membership.</h3>
+                <P class="mt-2">Just a few more steps and you're done!<br>We hate paperwork, too.</P>
+                <form method="POST" action="{% url 'signupthird' %}">
+                    {% csrf_token %}
+                    <input type="email" placeholder="Email" name="email" class="form-control mt-2 bg-transparent">
+                    <input type="password" placeholder="Password" name="password" class="form-control mt-2 bg-transparent">
+                    <button class="btn btn-block btn-danger mt-3" type="submit">Continue</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+</section>
+
+
+{% endblock %}

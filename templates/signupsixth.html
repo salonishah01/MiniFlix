@@ -1,0 +1,36 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<section class="mt-3">
+    <div class="conatiner mt-5">
+        <div class="row">
+            <div class="card card-body col-lg-5 col-md-5 col-12 mx-auto">
+                <p class="mt-3 mb-0">STEP <strong>3</strong> OF <strong>3</strong></p>
+                <h3>Set up your credit or debit card.</h3>
+                <div class="row ml-1 mt-2">
+                    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/payment/svg/visa-v3.svg" width="35px">
+                    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/payment/svg/mastercard-v2.svg" width="35px" class="ml-1">
+                    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/payment/svg/amex-v2.svg" width="35px" class="ml-1">
+                    <img src="https://assets.nflxext.com/ffe/siteui/acquisition/payment/icon_dinersclub_v2.png" width="35px" class="ml-1">
+                </div>
+                    <form method="POST" action="{% url 'dashboard' %}" class="mt-2">
+                    {% csrf_token %}
+                    
+                    <input type="text" placeholder="Cardholder's Name" name="name" class="form-control mt-2 bg-transparent">
+                    <input type="number" placeholder="Card Number" name="cardnumber" class="form-control mt-2 bg-transparent">
+                    <input type="number" placeholder="Expiry Date(MM/YY)" name="expirydate" class="form-control mt-2 bg-transparent">
+                    <input type="number" placeholder="Security Code(CVV)" name="securitycode" class="form-control mt-2 bg-transparent">
+                    <p class="mt-4">Selected Plan : {{plan}}</p>
+                    <p class="text-center">By checking the checkbox below, you agree to our Terms of Use, Privacy<br> Statement, and that you are over 18. MiniFlix will automatically continue<br> your membership and charge the monthly membership fee (currently<br>{{plan}}) to your payment method until you cancel. You may cancel at any<br> time to avoid future charges.</p>
+                    <button type="submit" class="btn btn-block btn-danger mt-3">Start Membership</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        <br>
+        
+</section>
+
+
+{% endblock %}

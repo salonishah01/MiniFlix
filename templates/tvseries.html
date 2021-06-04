@@ -1,0 +1,22 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+{% block content %}
+
+<section>
+    <div class="container-fluid">
+        <h3 class="ml-3 mt-4 list">TV Shows </h3>
+        <div class="row mt-4 no-gutters movierow mx-auto">
+            {% for i in tvseries %}
+            <div class="col-lg-2 col-md-2 col-12">
+                <a href="{% url 'tvserie' i.id %}">
+                <img src="{{i.img1.url}}" class="img-fluid">
+                </a>
+            </div>
+            {% endfor %}
+          
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

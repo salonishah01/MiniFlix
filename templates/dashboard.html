@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% static "images" as baseUrl %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+    <title>MiniFlix</title>
+</head>
+<body>
+<section>
+    <div class="container-fluid mt-3 pl-3">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+            <a class="navbar-brand" href="{% url 'dashboard' %}"><img src="{% static 'images/logo.jpg' %}"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'dashboard' %}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'tvseries' %}">TV Series</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'movies' %}">Movies</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link">
+                      <form class="form-inline" method="POST" action="">
+                        {% csrf_token %}
+                        <input type="hidden" name="searchquery" value="searchquery">
+                        <input class="searchbar form-control bg-transparent pt-0 pb-0" type="search" placeholder="Search" name="search">
+                        <!-- <button class="searchbtn btn pt-0 pb-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button> -->
+                      </form>
+                    </a>
+                  </li>
+                </ul>
+                  <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link mr-4 active">{{user}}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-outline-light" href="{% url 'logout' %}">Logout</a>
+                </li>
+                
+                </ul>
+              
+            </div>
+          </nav>
+     </div>
+</section>
+
+{% block content %}
+
+<section id="poster">
+  <h3 class="title"><strong>MINIFLIX</strong> <span>ORIGINAL</span></h3>
+  <img src="{% static 'images/narcos3.png' %}" width="45%">
+  <p class="mt-2">2015 | 18+ | 3 Seasons | Crime TV Dramas</p>
+  <p class="pdist">The true story of Colombia's infamously violent and powerful drug<br> cartels fuels this gritty gangster drama series.</p>
+  <p class="pdist">Starring:Wagner Moura,Pedro Pascal,Boyd Holbrook<br>Creators:Chris Brancato,Carlo Bernard,Doug Miro</p>
+  <br>
+  {% if searched %}
+  <section class="movierow container-fluid">
+
+  <h3 class="ml-4 mb-2">Searched </h3>
+  <div class="row no-gutters">
+    {% for i in searched %}
+    <div class="col-lg-2 col-md-2 col-12">
+      <a href="{% url 'movie' i.id %}">
+       <img src="{{i.img1.url}}" class="img-fluid mb-4">
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+  {% endif %}
+ 
+</section>
+
+<section class="movierow container-fluid">
+     <h3 class="ml-4 mb-2">TV Shows</h3>
+    
+    <div class="row no-gutters">
+      {% for i in tvseries %}
+      
+        <div class="col-lg-2 col-md-2 col-12">
+          <a href="{% url 'tvseries' i.id %}">
+        <img src="{{i.img1.url}}" class="img-fluid">
+          </a>
+        </div>
+    
+      {% endfor %}
+        
+    </div>
+</section>
+
+<section class="movierow container-fluid mt-5 mb-5">
+    <h3>Bollywood Movies</h3>
+    <div class="row no-gutters">
+      {% for i in movies %}
+     
+        <div class="col-lg-2 col-md-2 col-12">
+          <a href="{% url 'movie' i.id %}">
+        <img src="{{i.img1.url}}" class="img-fluid">
+         </a>
+        </div>
+   
+      {% endfor %}
+     
+        
+    </div>
+ 
+</section>
+
+{% endblock %}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</body>
+</html>

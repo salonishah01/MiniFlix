@@ -1,0 +1,229 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color: black;
+    color: white;
+}
+
+#main{
+    background-image: url('../images/netnbg.jpg');
+    background-size: cover;
+    box-shadow: inset 20px 80px 20px rgba(0,0,0,0.6);
+}
+
+.card-body{
+    background-color: rgba(0,0,0,0.6);
+}
+
+.btn-danger{
+    background-color: #e50914;
+}
+
+.btn-outline-light:hover{
+background-color: transparent;
+color: white;
+}
+
+.h1{
+    font-size: 9vh;
+    font-weight: 600;
+    margin-top: 12%;
+}
+
+.h1mob{
+    font-size: 7vh;
+    font-weight: 600;
+    margin-top: 12%;
+}
+
+h3{
+    font-weight: 500;
+}
+
+.btn{
+    border-radius: 0px !important;
+}
+
+.form-control{
+    border-radius: 0px !important;
+    padding-right:45vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;;
+}
+
+.getbt{
+    font-size: 4vh;
+    padding-right:2vh;
+    
+}
+
+.img-fluid{
+    position: relative;
+}
+
+video{
+    position: absolute;
+    margin-top: 2.6vh;
+    margin-left: 11vh !important;
+}
+
+.video{
+    position: absolute;
+    margin-top: 3.6vh;
+    margin-left: 13.7vh !important;
+}
+
+.questions{
+    font-weight: 400;
+}
+
+.bg-dark{
+    background-color: #303030!important;
+    border-radius: 0px !important;
+}
+
+#hide{
+    margin-top: 3vh;
+    display: none;
+    
+}
+
+.fa-plus{
+    cursor: pointer;
+    font-weight: lighter !important;
+}
+
+.footer h5{
+    font-weight: lighter;
+    color: #757575;
+}
+
+.footer p{
+    font-weight: lighter;
+    color: #757575;
+}
+
+.foot{
+    margin-top: -10px;
+}
+
+.signin{
+    border-radius: 7px !important;
+    border-color: black !important;
+}
+
+form p{
+    opacity: 0.7;
+}
+
+form h5{
+    font-weight:normal;
+    color: #757575;
+}
+
+form h5 a{
+    color: white;
+    font-weight: 500;
+}
+
+form h5 a:hover{
+    color: white;
+}
+
+.fa-check{
+    color: #e50914;
+}
+
+.pdist{
+    margin-top: -10px;
+}
+
+.mobile:hover{
+    color: #e50914;
+}
+
+.line{
+    margin-top: -10px;
+}
+
+.planp{
+    opacity: 0.8;
+    font-weight: lighter;
+}
+
+/* Dashboard */
+
+#poster{
+    background-image: url('../images/nacrcos4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: inset 500px 20px 50px rgba(0,0,0,0.6);
+}
+
+#poster span{
+    font-weight: lighter;
+}
+
+.title{
+    margin-left: 5%;
+    padding-top: 7%;
+    font-size: 25px;
+}
+
+#poster img{
+    margin-left: 5%;
+}
+
+#poster p{
+    margin-left: 5%;
+}
+
+.movierow img:hover{
+    opacity: 0.5;
+    cursor: pointer;
+    border-style:solid;
+    border-color: whitesmoke;
+}
+
+.searchbar{
+    border-color: black;
+}
+
+.searchbtn{
+    background-color: black;
+    color: white;
+}
+
+/* Movie Page */
+
+#movie span{
+    font-weight: lighter;
+}
+
+.titleone{
+    margin-left: 5%;
+    margin-top: -52%;
+    font-size: 25px;
+}
+
+.logo{
+    margin-left: 5%;
+}
+
+#movie p{
+    margin-left: 5%;
+}
+
+.list{
+    font-weight: lighter;
+}
+
+.banner{
+    position: relative;
+    z-index: -2;
+}
+
+#movie{
+    box-shadow: inset 600px 20px 80px rgba(0,0,0,0.9);
+}
+

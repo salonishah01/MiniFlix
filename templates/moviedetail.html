@@ -1,0 +1,52 @@
+{% extends 'dashboard.html' %}
+{% load static %}
+{% block content %}
+
+    <script>
+    var vid = document.getElementById("myVideo");
+
+function playVid() {
+  vid.play();
+}
+
+function pauseVid() {
+  vid.pause();
+}
+</script>
+
+<section id="movie">
+
+    <img src="{{video.img2.url}}" width="100%" class="banner">
+   
+    <h3 class="titleone"><strong>MINIFLIX</strong> <span>Movies</span></h3>
+    <img src="{{video.img3.url}}" width="35%" class="logo">
+    <p class="moviedp mt-3">{{video.year}} | 18+ | Seasons | {{video.category}}</p>
+    <p class="pdist">{{video.desc}}</p>
+    <p class="pdist"><strong>Starring :</strong> {{video.starring}}<br>
+      {% if video.creators %}<strong>Creators :</strong> {{video.creators}}</p>{% endif %}
+
+    <section>
+    <div class="container mt-5">
+        <div class="row">
+        <div class="card card-body col-lg-6 col-md-6 col-12 mx-auto">
+                <button onclick="playVid()" class="mt-4 btn btn-block btn-danger signin pt-2 pb-2">Play Now!</button>
+            <br>
+            <iframe id='myVideo' width="420" height="345" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe>
+                <button onclick="pauseVid()" class="mt-4 btn btn-block btn-danger signin pt-2 pb-2">Pause!</button>
+         </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    </section>
+        <br>
+    <br>
+    <br>
+    <br>
+  </section>
+
+{% endblock %}
+
+
+

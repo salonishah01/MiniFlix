@@ -1,0 +1,33 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<section>
+<div class="container mt-5">
+    <div class="row">
+    <div class="card card-body col-lg-6 col-md-6 col-12 mx-auto">
+        <h2>Sign In</h2>
+        {% for i in messages %}
+        <p>{{i}}</p>
+        {% endfor %}
+        <form method="POST" action="" class="mt-4">
+            {% csrf_token %}
+            <input type="email" placeholder="Email" name="email" class="signin form-control bg-dark ">
+            <input type="password" placeholder="Password" name="password" class="signin form-control mt-3 bg-dark">
+            <button type="submit" class="mt-4 btn btn-block btn-danger signin pt-2 pb-2">Sign In</button>
+            <p class="float-right mt-1">Need help?</p>
+            <h5 class="mt-5">New to MiniFlix? <a href="{% url 'in' %}">Sign up now.</a></h5>
+            <p class="mt-4">This page is protected by Google reCAPTCHA to ensure you're not a bot.</p>
+        </form>
+     </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+</section>
+
+
+
+{% endblock %}
