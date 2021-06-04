@@ -25,7 +25,7 @@ SECRET_KEY = 'i^7mi49w&i)!&hqbhe-#di75$3+3oc9xl91dlnlm!ig)qkk9td'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*','miniflix01.herokuapp.com']
+ALLOWED_HOSTS = ['*','miniflix-02.herokuapp.com']
 
 
 # Application definition
